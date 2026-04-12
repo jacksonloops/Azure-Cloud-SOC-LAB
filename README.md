@@ -67,6 +67,9 @@ Internet (Attackers)
 - Connected the VM to the existing VNet and subnet
 - Disabled all Windows Firewall profiles on the VM to maximize attack surface
 
+![Windows Firewall Disabled](images/cloud%20SOC%20pic%20FW.png)
+*All three firewall profiles (Domain, Private, Public) disabled on the honeypot VM.*
+
 ### NSG Firewall Rules
 Replaced the default RDP-only inbound rule with a permissive rule to attract attackers:
 
@@ -104,6 +107,9 @@ SecurityEvent
 | order by TimeGenerated desc
 ```
 
+![Event Viewer - Failed Logins](images/cloud%20SOC%20pic%20Failed%20login.png)
+*Searching for Event ID 4625 (Failed Logon) in the VM's local Event Viewer to verify attack activity.*
+
 > Within minutes of deployment, brute-force login attempts were detected from international IP addresses. The first observed attacker originated from **Hong Kong**, attempting to authenticate with the username `administrator` — the IP was already flagged on threat intelligence databases.
 
 ---
@@ -128,8 +134,8 @@ WindowsEvents
 - Created a custom **Sentinel Workbook** using a JSON configuration to visualize failed login attempts on a world map
 - Each point represents a unique attacker source, plotted by geographic coordinates derived from the GeoIP watchlist
 
-<!-- Add your attack map screenshot here -->
-<!-- ![Attack Map](images/attack-map.png) -->
+![Attack Map](images/Attack%20map%20cloud%20SOC%20.png)
+*Live attack map showing brute-force login attempts originating from around the world — 1,250+ attempts from Auckland, New Zealand visible here.*
 
 ---
 
@@ -161,11 +167,3 @@ WindowsEvents
 - [ ] Map detections to the **MITRE ATT&CK** framework
 
 ---
-
-## Screenshots
-
-<!-- Add your screenshots here -->
-<!-- ![Architecture](images/architecture.png) -->
-<!-- ![Sentinel Dashboard](images/sentinel-dashboard.png) -->
-<!-- ![Attack Map](images/attack-map.png) -->
-<!-- ![Failed Logins](images/failed-logins.png) -->
