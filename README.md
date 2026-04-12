@@ -134,7 +134,7 @@ WindowsEvents
 - Created a custom **Sentinel Workbook** using a JSON configuration to visualize failed login attempts on a world map
 - Each point represents a unique attacker source, plotted by geographic coordinates derived from the GeoIP watchlist
 
-![Attack Map](images/Attack%20map%20cloud%20SOC%20.png)
+![Attack Map](images/Attack%20map%20cloud%20SOC%20after.png)
 *Live attack map showing brute-force login attempts originating from around the world — 1,250+ attempts from Auckland, New Zealand visible here.*
 
 ---
